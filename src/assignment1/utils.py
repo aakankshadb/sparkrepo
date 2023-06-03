@@ -4,7 +4,7 @@ from pyspark.sql.functions import *
 
 #creating a spark Session
 def Spark_Session():
-    spark=SparkSession.builder.appName("Spark_assignment_1").getOrCreate()
+    spark = SparkSession.builder.appName("Spark_assignment_1").getOrCreate()
     return spark
 
 #creating a data frame which has contents of user.csv file
