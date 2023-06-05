@@ -4,7 +4,7 @@ import unittest
 
 class SparkAssignment2Test(unittest.TestCase):
 
-# creating a test function to load the file to a rdd
+#creating a test function to load the file to a rdd
     def setUp(self):
         self.file_path = "../../resource/ghtorrent-logs.txt"
         self.log_rdd = load_rdd(self.file_path)
