@@ -1,0 +1,8 @@
+2023-06-15 22:17:40,510 [INFO] User table:
+2023-06-15 22:17:42,843 [INFO] Closing down clientserver connection
+2023-06-15 22:19:06,727 [INFO] User table:
+2023-06-15 22:19:07,021 [INFO] Transaction table
+2023-06-15 22:19:07,559 [INFO] Unique Cities where each product is sold.
+2023-06-15 22:19:08,215 [INFO] Products bought by each user
+2023-06-15 22:19:08,548 [INFO] Total spending done by each user on each product
+2023-06-15 22:19:08,878 [INFO] Closing down clientserver connection
