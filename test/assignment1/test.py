@@ -8,7 +8,7 @@ class MyTestCase(unittest.TestCase):
 
     spark=Spark_Session()
 
-    def test_function(self):
+    def test_joined_data(self):
             userSchema = StructType([
             StructField("user_id", IntegerType(), True),
             StructField("emailid", StringType(), True),
@@ -53,12 +53,11 @@ class MyTestCase(unittest.TestCase):
                            (3300103,1000003,103,34000,"tv",103,"madan.44@gmail.com", "marathi","nagpur"),
                            (3300107,1000007,105,66000,"laptop",105,"sahil.55@gmail.com","english","usa")]
 
-            # testing the joined dataframe
             expected_df = self.spark.createDataFrame(data=expected_data, schema=expected_schema)
             transformed_df = joined_data(user_df,transaction_df)
             self.assertEqual(sorted(transformed_df.collect()), sorted(expected_df.collect()))
 
-            #testing the count of unique locations where each product is sold.
+#testing the count of unique locations where each product is sold.
             expected_schema1 = StructType([
             StructField("product_description", StringType(), True),
             StructField("location ", StringType(), True),
@@ -72,18 +71,17 @@ class MyTestCase(unittest.TestCase):
             transformed_df1 = unique_loc(transformed_df)
             self.assertEqual(sorted(transformed_df1.collect()), sorted(expected_df1.collect()))
 
-             # testing the products bought by each user.
-            # expected_schema2 = StructType([
-            # StructField("userid", IntegerType(), True),
-            # StructField("Bought_Products", StringType(), True)
-            #                             ])
-            # expected_data2 = [(101,['speaker']), (102,['keyboard']),(103,['tv']),(105,['laptop'])]
-            # expected_df2 = self.spark.createDataFrame(data=expected_data2, schema=expected_schema2)
-            # transformed_df2 = prod_per_user(transformed_df)
-            # transformed_df2.show()
-            # self.assertEqual(sorted(transformed_df2.collect()), sorted(expected_df2.collect()))
+ # testing the products bought by each user.
+            expected_schema2 = StructType([
+            StructField("userid", IntegerType(), True),
+            StructField("Bought_Products", ArrayType(StringType()), True)
+                                        ])
+            expected_data2 = [(101,['speaker']), (102,['keyboard']),(103,['tv']),(105,['laptop'])]
+            expected_df2 = self.spark.createDataFrame(data=expected_data2, schema=expected_schema2)
+            transformed_df2 = prod_per_user(transformed_df)
+            self.assertEqual(sorted(transformed_df2.collect()), sorted(expected_df2.collect()))
 
-        # testing the total spendings by each user on each product
+# testing the total spendings by each user on each product
             expected_schema3 = StructType([
             StructField("userid", IntegerType(), True),
             StructField("product_description", StringType(), True),

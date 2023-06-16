@@ -22,6 +22,7 @@ logging.info("Transaction table")
 df_trans.show()
 
 df_join = joined_data(df_user, df_trans)
+logging.info("Joined table")
 df_join.show()
 
 df_unique_location = unique_loc(df_join)
