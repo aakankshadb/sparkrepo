@@ -6,3 +6,17 @@
 2023-06-15 22:19:08,215 [INFO] Products bought by each user
 2023-06-15 22:19:08,548 [INFO] Total spending done by each user on each product
 2023-06-15 22:19:08,878 [INFO] Closing down clientserver connection
+2023-06-17 00:50:34,816 [INFO] User table:
+2023-06-17 00:50:35,210 [INFO] Transaction table
+2023-06-17 00:50:35,382 [INFO] Joined table
+2023-06-17 00:50:35,898 [INFO] Unique Cities where each product is sold.
+2023-06-17 00:50:36,704 [INFO] Products bought by each user
+2023-06-17 00:50:37,083 [INFO] Total spending done by each user on each product
+2023-06-17 00:50:37,445 [INFO] Closing down clientserver connection
+2023-06-17 00:51:08,117 [INFO] User table:
+2023-06-17 00:51:08,495 [INFO] Transaction table
+2023-06-17 00:51:08,715 [INFO] Joined table
+2023-06-17 00:51:09,333 [INFO] Unique Cities where each product is sold.
+2023-06-17 00:51:10,097 [INFO] Products bought by each user
+2023-06-17 00:51:10,477 [INFO] Total spending done by each user on each product
+2023-06-17 00:51:10,852 [INFO] Closing down clientserver connection
